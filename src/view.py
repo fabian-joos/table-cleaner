@@ -16,10 +16,10 @@ class TcView():
 
     def init_widgets(self):
         self.label = ttk.Label(self.root, text="Hello, Tkinter!")
-        self.button = ttk.Button(self.root, text="Click me!")
-        self.entry = ttk.Entry(self.root)
+        self.load_file_button = ttk.Button(self.root, text="Load file")
+        self.load_file_entry = ttk.Entry(self.root)
 
     def place_widgets(self):
         self.label.pack(side="top")
-        self.button.pack(side="top", fill="x", padx=10)
-        self.entry.pack(side="top", fill="x", padx=10)
+        self.load_file_button.pack(side="top", fill="x", padx=10)
+        self.load_file_entry.pack(side="top", fill="x", padx=10)
