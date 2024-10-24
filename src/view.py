@@ -1,4 +1,3 @@
-#import tkinter as tk
 from tkinter import ttk
 
 class TcView():
@@ -11,7 +10,6 @@ class TcView():
         self.init_widgets()
         self.place_widgets()
 
-    
     def setup_window(self):
         self.root.title("Title - TcView v0.1")
         self.root.geometry("800x600")
@@ -23,5 +21,5 @@ class TcView():
 
     def place_widgets(self):
         self.label.pack(side="top")
-        self.button.pack(side="top")
+        self.button.pack(side="top", fill="x", padx=10)
         self.entry.pack(side="top", fill="x", padx=10)
