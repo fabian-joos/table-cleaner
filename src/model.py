@@ -4,13 +4,14 @@ from tkinter import filedialog
 class TcModel():
     def __init__(self):
         self.model = None
-        self.df = None
+        self.load_file_filename = ""
+        self.df = pd.DataFrame()
+        self.df_columns = []
 
     def load_file(self):
         self.load_file_filename = filedialog.askopenfilename(
             defaultextension=".csv",
-            filetypes=[("CSV files", "*.csv")]
-        )
+            filetypes=[("CSV files", "*.csv")])
         if self.load_file_filename:
             self.df = pd.read_csv(self.load_file_filename, sep=";", encoding="utf-8")
-            print(f"model.df.shape: {self.df.shape}")
+            self.df_columns = list(self.df.columns)
