@@ -11,11 +11,11 @@ class TcView():
         self.place_widgets()
 
     def setup_window(self):
-        self.root.title("Title - TcView v0.1")
-        self.root.geometry("800x600")
+        self.root.title("Frooter Table Cleaner - v0.1")
+        self.root.geometry("400x300")
 
     def init_widgets(self):
-        self.label = ttk.Label(self.root, text="Hello, Tkinter!")
+        self.label = ttk.Label(self.root, text="Hello!")
         self.load_file_button = ttk.Button(self.root, text="Load file")
         self.load_file_entry = ttk.Entry(self.root)
 
