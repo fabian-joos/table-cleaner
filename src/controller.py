@@ -28,7 +28,8 @@ class TcController():
         self.view.save_file_status.config(text="File saved")
     
     def lookup_expression_check_click(self):
-        '''Lookup expression check button click event handler.'''
+        '''Lookup expression check button click event handler.
+        Checks if lookup expression is found in lookup column and updates view with status'''
         lookup_column = self.view.lookup_column_combobox.get()
         lookup_expression = self.view.lookup_expression_entry.get()
         lookup_result = self.model.df[lookup_column].str.contains(lookup_expression)
