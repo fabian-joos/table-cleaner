@@ -4,3 +4,4 @@ src/__pycache__/view.cpython-311.pyc
 notebooks/main.ipynb
 notebooks/tkinter_basics.ipynb
 data/
+venv/
