@@ -3,3 +3,4 @@ src/__pycache__/model.cpython-311.pyc
 src/__pycache__/view.cpython-311.pyc
 notebooks/main.ipynb
 notebooks/tkinter_basics.ipynb
+data/
