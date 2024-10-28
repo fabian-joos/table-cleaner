@@ -32,8 +32,9 @@ class TcController():
         Checks if lookup expression is found in lookup column and updates view with status'''
         lookup_column = self.view.lookup_column_combobox.get()
         lookup_expression = self.view.lookup_expression_entry.get()
-        lookup_result = self.model.df[lookup_column].str.contains(lookup_expression)
-        self.view.lookup_expression_status.config(text=f"Lookup expression found in {lookup_result.sum()} rows")
+        if lookup_column in self.model.df_columns:
+            lookup_result = self.model.df[lookup_column].str.contains(lookup_expression)
+            self.view.lookup_expression_status.config(text=f"Lookup expression found in {lookup_result.sum()} rows")
 
     def replace_button_click(self):
         '''Replace button click event handler.
