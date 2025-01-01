@@ -15,9 +15,9 @@ class TcController():
         '''Load file button click event handler.
         Call model load_file method and update view'''
         self.model.load_file()
-        if self.model.load_file_filename != self.view.load_file_entry.get():
+        if self.model.loaded_file_filename != self.view.load_file_entry.get():
             self.view.load_file_entry.delete(0, "end")
-            self.view.load_file_entry.insert(0, self.model.load_file_filename)
+            self.view.load_file_entry.insert(0, self.model.loaded_file_filename)
             self.view.load_file_status.config(text=f"File loaded, shape: {self.model.df.shape}")
             self.view.lookup_column_combobox.config(values=self.model.df_columns)
 

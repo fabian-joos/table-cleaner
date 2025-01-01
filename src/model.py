@@ -4,19 +4,19 @@ from tkinter import filedialog
 class TcModel():
     def __init__(self):
         self.model = None
-        self.load_file_filename = ""
+        self.loaded_file_filename = ""
         self.df = pd.DataFrame()
         self.df_columns = []
 
     def load_file(self):
         '''Load CSV file to DataFrame and update df_columns'''
-        load_file_filename_current = str(self.load_file_filename)
-        self.load_file_filename = filedialog.askopenfilename(defaultextension=".csv", filetypes=[("CSV files", "*.csv")])
-        if self.load_file_filename:
-            self.df = pd.read_csv(self.load_file_filename, sep=";", encoding="utf-8")
+        loaded_file_filename_current = str(self.loaded_file_filename)
+        self.loaded_file_filename = filedialog.askopenfilename(defaultextension=".csv", filetypes=[("CSV files", "*.csv")])
+        if self.loaded_file_filename:
+            self.df = pd.read_csv(self.loaded_file_filename, sep=";", encoding="utf-8")
             self.df_columns = list(self.df.columns)
         else:
-            self.load_file_filename = load_file_filename_current
+            self.loaded_file_filename = loaded_file_filename_current
 
     def save_file(self):
         '''Save DataFrame to CSV file'''
