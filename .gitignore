@@ -1,7 +1,6 @@
-src/__pycache__/controller.cpython-311.pyc
-src/__pycache__/model.cpython-311.pyc
-src/__pycache__/view.cpython-311.pyc
+.venv/
+src/__pycache__/
 notebooks/main.ipynb
 notebooks/tkinter_basics.ipynb
 data/
-venv/
+checkout.ipynb
