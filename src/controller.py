@@ -8,7 +8,6 @@ class TcController():
         '''Setup event handlers'''
         self.view.load_file_button.config(command=self.load_file_button_click)
         self.view.save_file_button.config(command=self.save_file_button_click)
-        self.view.lookup_expression_check.config(command=self.lookup_expression_check_click)
         self.view.replace_button.config(command=self.replace_button_click)
 
     def load_file_button_click(self):

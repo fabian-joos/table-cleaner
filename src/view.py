@@ -17,83 +17,72 @@ class TcView():
         self.root.state('zoomed')
 
     def init_widgets(self):
+        # main frames
+        self.view_frame = ttk.Frame(self.root)
+        self.control_frame = ttk.Frame(self.root, height=30)
+        self.control_frame2 = ttk.Frame(self.root, height=30)
+        self.file_handling_frame = ttk.Frame(self.root, height=30)
 
-        self.main_frame = ttk.Frame(self.root)
+        # treeview frame
+        self.treeview = ttk.Treeview(self.view_frame, show="headings")
 
-        self.control_frame = ttk.Frame(self.main_frame, width=350)
-        self.view_frame = ttk.Frame(self.main_frame)
-
-
-        # Control Frame BEGIN
-        self.load_file_button = ttk.Button(self.control_frame, text="Load file")
-        self.load_file_entry = ttk.Entry(self.control_frame)
-        self.load_file_separator = ttk.Separator(self.control_frame, orient='horizontal')
-
-        self.lookup_column_label = ttk.Label(self.control_frame, text="Select lookup column:")
+        # control frame
+        self.lookup_column_label = ttk.Label(self.control_frame, text="If ")
         self.lookup_column_combobox = ttk.Combobox(self.control_frame, state='readonly')
-        self.lookup_expression_label = ttk.Label(self.control_frame, text="Enter lookup expression:")
+        self.lookup_expression_label = ttk.Label(self.control_frame, text=" contains ")
         self.lookup_expression_entry = ttk.Entry(self.control_frame)
-        self.lookup_expression_check = ttk.Button(self.control_frame, text="Check")
-        self.lookup_separator = ttk.Separator(self.control_frame, orient='horizontal')
 
-        self.replace_expression_label = ttk.Label(self.control_frame, text="Enter replace expression:")
+        self.replace_expression_label = ttk.Label(self.control_frame, text=" replace text with ")
         self.replace_expression_entry = ttk.Entry(self.control_frame)
         self.replace_button = ttk.Button(self.control_frame, text="Replace")
-        self.replace_separator = ttk.Separator(self.control_frame, orient='horizontal')
 
-        self.save_file_button = ttk.Button(self.control_frame, text="Save file")
-        # Control Frame END
+        # control frame 2
+        self.placeholder_label = ttk.Label(self.control_frame2, text="placeholder")
 
+        # file handling frame
+        self.load_file_entry = ttk.Entry(self.file_handling_frame, width=120)
+        self.load_file_button = ttk.Button(self.file_handling_frame, text="Load file", width=20)
+        self.save_file_button = ttk.Button(self.file_handling_frame, text="Save file", width=20)
 
-        # Treeview Frame BEGIN
-        self.treeview = ttk.Treeview(self.view_frame, show="headings")
-        # Treeview Frame END
-
-
-        # Status Bar BEGIN
+        # status bar
         self.status_bar = ttk.Label(self.root, text="Status bar")
-        # Status Bar END
 
     def pack_widgets(self):
-        self.main_frame.pack(side="top", fill="both", expand=True)
-        self.main_frame.pack_propagate(False)
-
-        self.control_frame.pack(side="left", fill="y")
-        self.control_frame.pack_propagate(False)
-
-        self.view_frame.pack(side="left", fill="both", expand=True)
+        self.view_frame.pack(side="top", fill="both", expand=True)
         self.view_frame.pack_propagate(False)
 
+        self.control_frame.pack(side="top", fill="x", pady=5)
+        self.control_frame.pack_propagate(False)
 
-        # Control Frame BEGIN
-        self.load_file_button.pack(side="top", fill="x", padx=10)
-        self.load_file_entry.pack(side="top", fill="x", padx=10)
-        self.load_file_separator.pack(side="top", fill="x", padx=10, pady=10)
+        #self.control_frame2.pack(side="top", fill="x", pady=5)
+        #self.control_frame2.pack_propagate(False)
 
-        self.lookup_column_label.pack(side="top", fill="x", padx=10)
-        self.lookup_column_combobox.pack(side="top", fill="x", padx=10)
-        self.lookup_expression_label.pack(side="top", fill="x", padx=10)
-        self.lookup_expression_entry.pack(side="top", fill="x", padx=10)
-        self.lookup_expression_check.pack(side="top", fill="x", padx=10)
-        self.lookup_separator.pack(side="top", fill="x", padx=10, pady=10)
+        self.file_handling_frame.pack(side="top", fill="x", pady=5)
+        self.file_handling_frame.pack_propagate(False)
 
-        self.replace_expression_label.pack(side="top", fill="x", padx=10)
-        self.replace_expression_entry.pack(side="top", fill="x", padx=10)
-        self.replace_button.pack(side="top", fill="x", padx=10)
-        self.replace_separator.pack(side="top", fill="x", padx=10, pady=10)
-
-        self.save_file_button.pack(side="top", fill="x", padx=10)
-        # Control Frame END
-
-
-        # Treeview Frame BEGIN
+        # treeview frame
         self.treeview.pack(side="top", fill="both", expand=True)
-        # Treeview Frame END
 
+        # control frame
+        self.lookup_column_label.pack(side="left", fill="x", padx=10)
+        self.lookup_column_combobox.pack(side="left", fill="x", padx=10)
+        self.lookup_expression_label.pack(side="left", fill="x", padx=10)
+        self.lookup_expression_entry.pack(side="left", fill="x", padx=10)
 
-        # Status Bar BEGIN
-        self.status_bar.pack(side="left", padx=5)
-        # Status Bar END
+        self.replace_expression_label.pack(side="left", fill="x", padx=10)
+        self.replace_expression_entry.pack(side="left", fill="x", padx=10, expand=True)
+        self.replace_button.pack(side="left", fill="x", padx=10)
+
+        # control frame 2
+        self.placeholder_label.pack(side="left")
+
+        # fine handling frame
+        self.save_file_button.pack(side="right", fill="x", padx=10, pady=2)
+        self.load_file_button.pack(side="right", fill="x", padx=10, pady=2)
+        self.load_file_entry.pack(side="right", fill="x", padx=11, pady=2)
+
+        # status bar
+        self.status_bar.pack(side="left", padx=5, pady=5)
 
     def dev_default(self):
         self.lookup_expression_entry.delete(0, "end")
