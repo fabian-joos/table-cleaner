@@ -43,7 +43,8 @@ class TcController():
         lookup_column = self.view.lookup_column_combobox.get()
         lookup_expression = self.view.lookup_expression_entry.get()
         replace_expression = self.view.replace_expression_entry.get()
-        self.model.replace(lookup_column, lookup_expression, replace_expression)
+        replace_instruction = self.view.replace_instruction_combobox.get()
+        self.model.replace_action(lookup_column, lookup_expression, replace_expression, replace_instruction)
         self.view.status_bar.config(text="Replacements made")
         self.update_treeview_data()
 

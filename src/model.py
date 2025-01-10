@@ -24,7 +24,10 @@ class TcModel():
         if save_file_filename:
             self.df.to_csv(save_file_filename, sep=";", encoding="utf-8", index=False)
 
-    def replace(self, lookup_column, lookup_expression, replace_expression):
+    def replace_action(self, lookup_column, lookup_expression, replace_expression, replace_instruction):
         '''Replace lookup_expression with replace_expression in lookup_column of DataFrame df'''
         if lookup_column in self.df_columns:
-            self.df[lookup_column] = self.df[lookup_column].str.replace(lookup_expression, replace_expression)
+            if replace_instruction == "replace text with":
+                self.df[lookup_column] = self.df[lookup_column].str.replace(lookup_expression, replace_expression)
+            elif replace_instruction == "replace cell with":
+                self.df[lookup_column] = self.df[lookup_column].apply(lambda x: replace_expression if lookup_expression in x else x)

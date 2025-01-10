@@ -28,9 +28,14 @@ class TcView():
 
         # control frame
         self.lookup_column_label = ttk.Label(self.control_frame, text="If ")
-        self.lookup_column_combobox = ttk.Combobox(self.control_frame, state='readonly')
+        self.lookup_column_combobox = ttk.Combobox(self.control_frame, state="readonly")
         self.lookup_expression_label = ttk.Label(self.control_frame, text=" contains ")
         self.lookup_expression_entry = ttk.Entry(self.control_frame)
+
+        self.replace_instruction_combobox = ttk.Combobox(self.control_frame, state="readonly")
+        self.replace_instruction_combobox_values = ("replace text with", "replace cell with")
+        self.replace_instruction_combobox["values"] = self.replace_instruction_combobox_values
+        self.replace_instruction_combobox.set(self.replace_instruction_combobox_values[0])
 
         self.replace_expression_label = ttk.Label(self.control_frame, text=" replace text with ")
         self.replace_expression_entry = ttk.Entry(self.control_frame)
@@ -69,7 +74,7 @@ class TcView():
         self.lookup_expression_label.pack(side="left", fill="x", padx=10)
         self.lookup_expression_entry.pack(side="left", fill="x", padx=10)
 
-        self.replace_expression_label.pack(side="left", fill="x", padx=10)
+        self.replace_instruction_combobox.pack(side="left", fill="x", padx=10)
         self.replace_expression_entry.pack(side="left", fill="x", padx=10, expand=True)
         self.replace_button.pack(side="left", fill="x", padx=10)
 
