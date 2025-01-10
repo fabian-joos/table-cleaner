@@ -28,4 +28,5 @@ setup(
         "console_scripts": [
             "table-cleaner=table_cleaner.__main__:main"
         ]
+    }
 )
