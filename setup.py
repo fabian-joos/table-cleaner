@@ -23,7 +23,7 @@ setup(
         "six==1.16.0",
         "tzdata==2024.2",
         "Werkzeug==3.0.6"
-    ]
+    ],
     entry_points={
         "console_scripts": [
             "table-cleaner=table_cleaner.__main__:main"
