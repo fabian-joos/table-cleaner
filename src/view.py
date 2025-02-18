@@ -47,7 +47,7 @@ class TcView():
         # file handling frame
         self.load_file_entry = ttk.Entry(self.file_handling_frame, width=120)
         self.load_file_button = ttk.Button(self.file_handling_frame, text="Load file", width=20)
-        self.save_file_button = ttk.Button(self.file_handling_frame, text="Save file", width=20)
+        self.save_as_button = ttk.Button(self.file_handling_frame, text="Save as", width=20)
 
         # status bar
         self.status_bar = ttk.Label(self.root, text="Status bar")
@@ -82,7 +82,7 @@ class TcView():
         self.placeholder_label.pack(side="left")
 
         # fine handling frame
-        self.save_file_button.pack(side="right", fill="x", padx=10, pady=2)
+        self.save_as_button.pack(side="right", fill="x", padx=10, pady=2)
         self.load_file_button.pack(side="right", fill="x", padx=10, pady=2)
         self.load_file_entry.pack(side="right", fill="x", padx=11, pady=2)
 
