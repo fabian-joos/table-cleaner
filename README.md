@@ -1,6 +1,6 @@
 # Table Cleaner
 
-Table Cleaner is a simple tool designed to help you format your CSV tables efficiently.
+Table Cleaner is a user-friendly tool designed to help you efficiently clean and format your CSV tables. It provides a graphical user interface (GUI) to load, view, and manipulate table data, making it easy to find and replace specific expressions within your data.
 
 ## Features
 
