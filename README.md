@@ -2,6 +2,8 @@
 
 Table Cleaner is a user-friendly tool designed to help you efficiently clean and format your CSV tables. It provides a graphical user interface (GUI) to load, view, and manipulate table data, making it easy to find and replace specific expressions within your data.
 
+![Alt text](/img/screenshot.png?raw=true "Screenshot")
+
 ## Features
 
 - Find and replace a certain expression in a column and replace it with another expression
