@@ -13,7 +13,11 @@ class TcView():
 
     def setup_window(self):
         self.root.title("Frooter Table Cleaner - v0.1")
-        self.root.geometry(f"{int(0.6*self.root.winfo_screenwidth())}x{int(0.8*self.root.winfo_screenheight())}") #default window size when restored
+
+        # default window size when restored
+        self.root.geometry(
+            f"{int(0.6*self.root.winfo_screenwidth())} \
+                x{int(0.8*self.root.winfo_screenheight())}")
         self.root.state('zoomed')
 
     def init_widgets(self):

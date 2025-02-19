@@ -21,7 +21,11 @@ class TcModel():
         self.loaded_filename = filename
 
 
-    def replace_action(self, lookup_column, lookup_expression, replace_expression, replace_instruction):
+    def replace_action(self,
+                       lookup_column,
+                       lookup_expression,
+                       replace_expression,
+                       replace_instruction):
         '''Replace lookup_expression with replace_expression in lookup_column of DataFrame df'''
         if lookup_column in self.df_columns:
             if replace_instruction == "replace text with":
