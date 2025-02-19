@@ -1,5 +1,4 @@
 import pandas as pd
-from tkinter import filedialog
 
 class TcModel():
     def __init__(self):
