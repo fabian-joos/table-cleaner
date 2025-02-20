@@ -9,3 +9,4 @@ if __name__ == "__main__":
     view = TcView(root)
     controller = TcController(view, model)
     root.mainloop()
+    
