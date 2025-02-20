@@ -9,14 +9,22 @@ class TcModel():
 
 
     def load_file_to_dataframe(self, filename, sep=";", encoding="utf-8"):
-        """Load CSV file to DataFrame, update instance attributes df_columns and loaded_filename"""
+        """
+        Load CSV file to DataFrame, update instance attributes df_columns and loaded_filename
+
+        """
+
         self.df = pd.read_csv(filename, sep=sep, encoding=encoding)
         self.df_columns = list(self.df.columns)
         self.loaded_filename = filename
 
 
     def save_dataframe_to_file(self, filename, sep=";", encoding="utf-8"):
-        """Save DataFrame to CSV file"""
+        """
+        Save DataFrame to CSV file
+
+        """
+
         self.df.to_csv(filename, sep=sep, encoding=encoding, index=False)
         self.loaded_filename = filename
 
@@ -26,7 +34,11 @@ class TcModel():
                        lookup_expression,
                        replace_expression,
                        replace_instruction):
-        """Replace lookup_expression with replace_expression in lookup_column of DataFrame df"""
+        """
+        Replace lookup_expression with replace_expression in lookup_column of DataFrame df
+
+        """
+
         if lookup_column in self.df_columns:
             if replace_instruction == "replace text with":
                 self.df[lookup_column] = self.df[lookup_column] \

@@ -7,11 +7,23 @@ class TcView():
         self.dev_default()
 
     def setup_gui(self):
+        """
+        Sets up the graphical user interface (GUI) for the application.
+        This method initializes the main window, creates the necessary widgets,
+        and arranges them within the window by calling the corresponding methods.
+
+        """
+
         self.setup_window()
         self.init_widgets()
         self.pack_widgets()
 
     def setup_window(self):
+        """
+        Sets up the main application window with a title, default size, and initial state.
+
+        """
+
         self.root.title("Frooter Table Cleaner - v0.1")
 
         # default window size when restored
@@ -23,6 +35,11 @@ class TcView():
         self.root.state("zoomed")
 
     def init_widgets(self):
+        """
+        Initializes the widgets for the application.
+
+        """
+
         # main frames
         self.view_frame = ttk.Frame(self.root)
         self.control_frame = ttk.Frame(self.root, height=30)
@@ -59,6 +76,11 @@ class TcView():
         self.status_bar = ttk.Label(self.root, text="Status bar")
 
     def pack_widgets(self):
+        """
+        Packs and organizes the widgets within the main application window.
+
+        """
+
         self.view_frame.pack(side="top", fill="both", expand=True)
         self.view_frame.pack_propagate(False)
 
@@ -96,6 +118,13 @@ class TcView():
         self.status_bar.pack(side="left", padx=5, pady=5)
 
     def dev_default(self):
+        """
+        Resets field entries to default values.
+        This method clears the current text in certain
+        entry fields and inserts default values.
+
+        """
+
         self.lookup_expression_entry.delete(0, "end")
         self.lookup_expression_entry.insert(0, "FindMe")
         self.replace_expression_entry.delete(0, "end")
